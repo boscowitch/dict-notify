@@ -16,7 +16,10 @@ over the notification system (libnotify).
 
 Installation
 ============
-just compile with
+
+for compilation vala, gtk and libnotify developement are needed to be installed.
+also for running dict-notify dictd and some notification system needs to be installed and running.
+then just compile it with
 ::
     make
 
