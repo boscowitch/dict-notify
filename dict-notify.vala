@@ -28,7 +28,7 @@ public class DictNotify : GLib.Object {
 		dictcon = new DictConnection();
     		text = clip.wait_for_text();
     	
-    		if(text != null && text != old_text && text.length >= 1) {
+    		if(text != null && text.length <= 30 && text.length >= 1 && text != old_text ) {
     			old_text = text;
 		
 		
@@ -55,7 +55,7 @@ public class DictNotify : GLib.Object {
 			if(output == OutputType.LibNotify && results.length > 240)
 					results = results.substring(0,240) + "...";
 				
-			if(searchword != null && results != null && results != "")
+			if(searchword != null && results != null && results.length >= 1)
 				notify(searchword,results);
     			}
     		}

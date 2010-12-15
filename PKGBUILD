@@ -18,5 +18,5 @@ build() {
   git clone $_gitroot
   cd "$srcdir/dict-notify"
   make || return 1
-  make install || return 1
+  make DESTDIR=$pkgdir/ install || return 1
 }
